@@ -1,5 +1,5 @@
-function interactive_kalman_sim()
-    % INTERACTIVE_KALMAN_SIM
+function Kalman_filter_response()
+    % KALMAN_FILTER_RESPONSE
     % A real-time, interactive MATLAB GUI for the HX711 Kalman Filter.
 
     %% 1. Create the Main UI Figure
@@ -31,11 +31,7 @@ function interactive_kalman_sim()
     
     % Event flag for the button
     shift_flag = false;
-    shift_btn.ButtonPushedFcn = @(btn,event) trigger_shift();
-
-    function trigger_shift()
-        shift_flag = true;
-    end
+    shift_btn.ButtonPushedFcn = @(~, ~) trigger_shift();
 
     %% 4. Create Real-Time Info Display Panel
     info_pnl = uipanel(fig, 'Position', [750 40 200 100], 'Title', 'Live Telemetry', 'BackgroundColor', 'w');
@@ -126,5 +122,9 @@ function interactive_kalman_sim()
         
         % Control the speed (approx. 20 FPS). Lowering this number makes it run faster.
         pause(0.05); 
+    end
+
+    function trigger_shift()
+        shift_flag = true;
     end
 end
