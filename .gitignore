@@ -1,0 +1,31 @@
+# VS Code
+.vscode/
+*.code-workspace
+
+# Arduino / C++ Build Artifacts
+build/
+*.hex
+*.elf
+*.bin
+*.a
+*.o
+
+# MATLAB
+*.asv
+*.m~
+*.mat
+slprj/
+*.slxc
+
+# Proteus Design Suite
+*.PWI
+*.DBK
+*.DSN~
+*.tre
+*.xrf
+*.bak
+
+# OS Generated Files
+.DS_Store
+Thumbs.db
+.dist
